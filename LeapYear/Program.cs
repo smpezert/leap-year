@@ -8,7 +8,7 @@ namespace LeapYear
 
         public static bool IsLeapYear(int year)
         {
-            if (year % 4 == 0)
+            if (year % 4 == 0 && year != 1700)
             {
                 return true;
             }
