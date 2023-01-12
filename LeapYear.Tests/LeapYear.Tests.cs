@@ -20,5 +20,18 @@ namespace LeapYear.Tests
             //asert
             Assert.True(checkedYear);
         }
+
+        [Fact]
+        public void IsLeapYear_Year8_ReturnsTrue()
+        {
+            //arrange
+            var year = 8;
+
+            //act
+            var checkedYear = Year.IsLeapYear(year);
+
+            //asert
+            Assert.True(checkedYear);
+        }
     }
 }
