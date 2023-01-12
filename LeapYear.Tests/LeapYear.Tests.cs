@@ -8,95 +8,32 @@ namespace LeapYear.Tests
 {
     public class LeapYear
     {
-        [Fact]
-        public void IsLeapYear_Year4_ReturnsTrue()
+        [Theory]
+        [InlineData(4)]
+        [InlineData(8)]
+        [InlineData(800)]
+        [InlineData(1600)]
+        [InlineData(2000)]
+        [InlineData(2008)]
+        [InlineData(2012)]
+        [InlineData(2016)]
+        public void IsLeapYear_LeapYear_ReturnsTrue(int year)
         {
-            //arrange
-            var year = 4;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //asert
-            Assert.True(checkedYear);
+            Assert.True(Year.IsLeapYear(year));
         }
 
-        [Fact]
-        public void IsLeapYear_Year8_ReturnsTrue()
+        [Theory]
+        [InlineData(9)]
+        [InlineData(100)]
+        [InlineData(1500)]
+        [InlineData(1700)]
+        [InlineData(1800)]
+        [InlineData(1900)]
+        [InlineData(2100)]
+        [InlineData(2017)]
+        public void IsLeapYear_NotLeapYear_ReturnsFalse(int year)
         {
-            //arrange
-            var year = 8;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //asert
-            Assert.True(checkedYear);
-        }
-
-        [Fact]
-        public void IsLeapYear_Year9_ReturnsFalse()
-        {
-            //arrange
-            var year = 9;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //asert
-            Assert.False(checkedYear);
-        }
-
-        [Fact]
-        public void IsLeapYear_Year1700_ReturnsFalse()
-        {
-            //arrange
-            var year = 1700;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //assert
-            Assert.False(checkedYear);
-        }
-
-        [Fact]
-        public void IsLeapYear_Year1500_ReturnsFalse()
-        {
-            //arrange
-            var year = 1500;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //assert
-            Assert.False(checkedYear);
-        }
-
-        [Fact]
-        public void IsLeapYear_Year1600_ReturnsTrue()
-        {
-            //arrange
-            var year = 1600;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //assert
-            Assert.True(checkedYear);
-        }
-
-        [Fact]
-        public void IsLeapYear_Year2008_ReturnsTrue()
-        {
-            //arrange
-            var year = 2008;
-
-            //act
-            var checkedYear = Year.IsLeapYear(year);
-
-            //assert
-            Assert.True(checkedYear);
+            Assert.False(Year.IsLeapYear(year));
         }
     }
 }
